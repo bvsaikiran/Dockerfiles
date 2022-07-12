@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    ports:
+      - "8090:80"
+
+  httpd:
+    image: httpd:alpine
+    ports:
+      - "8081:80"
+
+  nginx:
+    image: nginx
+    ports: 
+      - "8888:80"
+ 
+  nodeapp:
+    image: bvsaikiran/javapp
+    ports:
+      - "8080:8080"
+
+  angapp:
+    image: bvsaikiran/angapp
+    ports:
+      - "7777:80"
